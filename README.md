@@ -1,16 +1,46 @@
-# flutter_animations
+# Flutter Animations
 
-A new Flutter project.
+A new Flutter Animations showcase website inspired by [Uiverse IO](https://uiverse.io/elements)
+<br/>
+<br/>
 
-## Getting Started
+![Screenshot 2024-07-28 225301](https://github.com/user-attachments/assets/ec3a4111-4203-4408-b945-44386bfaa6ff)
 
-This project is a starting point for a Flutter application.
+## 🤝 Contributing
 
-A few resources to get you started if this is your first Flutter project:
+Do you want to support Flutter Animations development? You are welcome to take below actions:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🐞 Report bugs or new ideas
+Submit an issue here: [Flutter Animations Issues](https://github.com/Mohit-Joshi-dev/flutter_animations/issues).
+
+### 📝 Contributors guide
+
+Take a look at our [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+## 📄 Attributions
+
+### 👁️‍🗨️ Icons
+[Font Awesome](https://fontawesome.com/ "Font Awesome")
+
+## 🏗️ Build Process
+
+1. Clone or download this repository
+
+   ```sh
+   git clone https://github.com/Mohit-Joshi-dev/flutter_animations.git
+   cd flutter_animations
+   ```
+
+2. Download dependencies
+
+   ```sh
+   flutter pub get
+   ```
+
+2. Build and install the app on your Web<br/>
+
+   ```sh
+   flutter config --enable-web
+   flutter run -d chrome
+   ```
