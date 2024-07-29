@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations/constants/app_constants.dart';
+import 'package:flutter_animations/models/models.dart';
 
 class HomeGridTile extends StatelessWidget {
-  const HomeGridTile({super.key});
+  const HomeGridTile({
+    super.key,
+    required this.template,
+  });
+
+  final Template template;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +24,7 @@ class HomeGridTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               color: AppConstants.appSecondary,
             ),
-            height: 200,
+            height: 250,
             width: 500,
             alignment: Alignment.center,
             child: const Icon(
@@ -29,7 +35,7 @@ class HomeGridTile extends StatelessWidget {
           Row(
             children: [
               Text(
-                "Loader Animation",
+                template.title,
                 style: theme.textTheme.titleMedium,
               ),
               const Spacer(),
