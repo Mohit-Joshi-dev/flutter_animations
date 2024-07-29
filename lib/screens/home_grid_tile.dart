@@ -18,7 +18,7 @@ class HomeGridTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               color: AppConstants.appSecondary,
             ),
-            height: 200,
+            height: 250,
             width: 500,
             alignment: Alignment.center,
             child: const Icon(
