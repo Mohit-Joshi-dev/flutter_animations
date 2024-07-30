@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animations/controllers/firebase_controller.dart';
 import 'package:flutter_animations/models/template.dart';

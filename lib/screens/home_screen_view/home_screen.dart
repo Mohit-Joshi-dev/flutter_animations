@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animations/constants/app_constants.dart';
 import 'package:flutter_animations/controllers/sidebar_controller.dart';
 import 'package:flutter_animations/screens/screens.dart';
+import 'package:flutter_animations/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,15 +18,22 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppConstants.appPrimary,
-      body: Row(
+      body: Column(
         children: [
-          Sidebar(controller: _controller),
+          const MainAppBar(),
           Expanded(
-              child: Center(
-            child: _ScreensExample(
-              controller: _controller,
+            child: Row(
+              children: [
+                Sidebar(controller: _controller),
+                Expanded(
+                    child: Center(
+                  child: _ScreensExample(
+                    controller: _controller,
+                  ),
+                ))
+              ],
             ),
-          ))
+          ),
         ],
       ),
     );
