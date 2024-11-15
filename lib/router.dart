@@ -11,15 +11,15 @@ final GoRouter router = GoRouter(
           return const HomeScreen();
         },
         pageBuilder: defaultPageBuilder(const HomeScreen()),
-        routes: [
-          GoRoute(
-            path: 'detail/:id',
-            builder: (BuildContext context, GoRouterState state) {
-              // final id = state.pathParameters['id'];
-              return const DetailScreen();
-            },
-            pageBuilder: defaultPageBuilder(const DetailScreen()),
-          ),
+        routes: const [
+          // GoRoute(
+          //   path: 'detail/:id',
+          //   builder: (BuildContext context, GoRouterState state) {
+          //     // final id = state.pathParameters['id'];
+          //     return const DetailScreen();
+          //   },
+          //   pageBuilder: defaultPageBuilder(const DetailScreen()),
+          // ),
         ]),
   ],
   errorBuilder: (context, state) {

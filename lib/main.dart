@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animations/constants/app_constants.dart';
 import 'package:flutter_animations/firebase_configs/firebase_configs.dart';
 import 'package:flutter_animations/router.dart';
-import 'package:flutter_animations/screens/home_screen_view/home_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() async {
   await dotenv.load(fileName: ".env");
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

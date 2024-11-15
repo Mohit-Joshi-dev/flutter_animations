@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations/constants/app_constants.dart';
+import 'package:flutter_animations/controllers/sidebar_controller.dart';
 import 'package:flutter_animations/models/models.dart';
-import 'package:go_router/go_router.dart';
 
-class HomeGridTile extends StatelessWidget {
+class HomeGridTile extends StatefulWidget {
   const HomeGridTile({
     super.key,
     required this.template,
@@ -12,12 +12,16 @@ class HomeGridTile extends StatelessWidget {
   final Template template;
 
   @override
+  State<HomeGridTile> createState() => _HomeGridTileState();
+}
+
+class _HomeGridTileState extends State<HomeGridTile> {
+  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return GestureDetector(
       onTap: () {
-        debugPrint("Detail Screen");
-        context.go('/detail/123');
+        SidebarController().selectSubView(SubViewName.detail);
       },
       child: Padding(
         padding: const EdgeInsets.only(right: 15, bottom: 15),
@@ -32,15 +36,24 @@ class HomeGridTile extends StatelessWidget {
               height: 250,
               width: 500,
               alignment: Alignment.center,
-              child: const Icon(
-                Icons.flutter_dash,
-                color: AppConstants.textWhite,
+              // child: const Icon(
+              //   Icons.flutter_dash,
+              //   color: AppConstants.textWhite,
+              // ),
+              child: Image.network(
+                widget.template.gifURL ?? '',
+                errorBuilder: (context, error, stackTrace) {
+                  return Image.network(
+                    'https://cdn.dribbble.com/users/1701248/screenshots/11283636/media/0402df490fd909229c23dcf6e3362f4c.gif',
+                    fit: BoxFit.cover,
+                  );
+                },
               ),
             ),
             Row(
               children: [
                 Text(
-                  template.title,
+                  widget.template.title,
                   style: theme.textTheme.titleMedium,
                 ),
                 const Spacer(),

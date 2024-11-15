@@ -12,7 +12,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final _controller = SidebarController(selectedIndex: 0, extended: true);
+  final _controller =
+      SidebarController(selectedIndex: 0, selectedSubView: SubViewName.main);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Sidebar(controller: _controller),
                 Expanded(
                     child: Center(
-                  child: _ScreensExample(
+                  child: _Screens(
                     controller: _controller,
                   ),
                 ))
@@ -99,8 +100,8 @@ class Sidebar extends StatelessWidget {
   }
 }
 
-class _ScreensExample extends StatelessWidget {
-  const _ScreensExample({
+class _Screens extends StatelessWidget {
+  const _Screens({
     required this.controller,
   });
 
@@ -115,7 +116,7 @@ class _ScreensExample extends StatelessWidget {
         final pageTitle = _getTitleByIndex(controller.selectedIndex);
         switch (controller.selectedIndex) {
           case 0:
-            return const HomeGridView();
+            return HomeGridView(controller: controller);
           default:
             return Text(
               pageTitle,
